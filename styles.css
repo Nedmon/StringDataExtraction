@@ -1,3 +1,36 @@
-.centerAll {
-	text-align: center;
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.alphaContainer {
+	width: 10%;
+	float: left;
+
+}
+#alphaInfo {
+	border: 1px solid black;
+	float: left;
+}
+h1:hover {
+	color: grey;
+}
+#letter_count {
+	text-align: left;
+	border-bottom: 1px solid black;
+	padding: 10px;
+	cursor: pointer;
 }
