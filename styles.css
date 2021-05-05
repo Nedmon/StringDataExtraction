@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+	background-color: #ebf0fa;
+}
 
 /* Create three equal columns that floats next to each other */
 .column {
@@ -16,10 +19,19 @@
   display: table;
   clear: both;
 }
+.textAreaContainer {
+	margin-top: 50px;
+}
 .alphaContainer {
-	width: 10%;
+	width: 20%;
 	float: left;
+	border: 1px solid black;
 
+}
+.alphaContainer div {
+	width: 50%;
+	float: left;
+	text-align: center;
 }
 #alphaInfo {
 	border: 1px solid black;
