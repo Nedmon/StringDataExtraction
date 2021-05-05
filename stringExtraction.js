@@ -8,7 +8,31 @@ let alphaArrayUpper = alphaUpper.split(``);
 alphaArray.unshift(undefined)  // array, indexes of which corrospond to letters in the alphabet
 alphaArrayUpper.unshift(undefined)
 
+function countWord(string) {
+	let inforString = ``;
+	let arr = [];
+	let wordCounter = 0;
+	let wordGroup = string.split(" ");
+	for(let i = 0; i < wordGroup.length; i++) {
+		if(arr[i] == true) {
 
+		} else {
+			let wordCounter = 0;
+			arr[i] = true
+			for(let h = i + 1; h < wordGroup.length; h++) {
+				if(wordGroup[h] == wordGroup[i]) {
+					wordCounter++;
+					arr[h] = true;
+				}
+			}
+			inforString +=`"${wordGroup[i]}" appears ${wordCounter + 1} times` + "<br />";
+		}
+	}
+	document.getElementById("para_word_info").innerHTML = inforString;
+}
+
+
+// Returns length of string with spaces and new-line characters removed
 function removeSpace(string) {
 	let exclude = ``;
 	for(let i = 0; i < string.length; i++) {
@@ -20,6 +44,12 @@ function removeSpace(string) {
 	}
 	return exclude.length;
 }
+
+
+// Returns length of string with special characters removed. 
+// This is done by looping through the user string and pushing each iteration (character) into the array.
+// However, for each iteration, immediately after being added, I loop through the special character string.
+// If the iteration of the outter loop matches any of the special characters, that character will be pushed out of the array.
 
 function removeAllCharacter(string) {
 	let exclude = [];
@@ -66,7 +96,6 @@ function addPercent() {   //Gets pertentage of each letter and adds it
 	for(let x = 1; x < alphaArray.length; x++) {
 		sum +=parseFloat(document.getElementById(`%${alphaArray[x]}`).innerHTML);
 	}
-	alert(Math.round(sum))
 }
 
 // Global Varibles
@@ -126,6 +155,9 @@ document.getElementById("letter_count").addEventListener("click", function() {
 
 document.getElementById("letter_count").addEventListener("click", function() {
 	getNumberOfLetters();
+})
+document.getElementById("word_count").addEventListener("click", function() {
+	countWord(document.getElementById("T1").value);
 })
 
 // Add Event Listeners

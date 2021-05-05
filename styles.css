@@ -28,6 +28,13 @@ body {
 	border: 1px solid black;
 
 }
+#wordsAmount {
+	border: 1px solid black;
+	width: 70%;
+	height: 300px;
+	overflow: scroll;
+}
+
 .alphaContainer div {
 	width: 50%;
 	float: left;
@@ -40,7 +47,7 @@ body {
 h1:hover {
 	color: grey;
 }
-#letter_count {
+.text-info {
 	text-align: left;
 	border-bottom: 1px solid black;
 	padding: 10px;
