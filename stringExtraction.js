@@ -8,6 +8,26 @@ let alphaArrayUpper = alphaUpper.split(``);
 alphaArray.unshift(undefined)  // array, indexes of which corrospond to letters in the alphabet
 alphaArrayUpper.unshift(undefined)
 
+
+
+function findLongest(string) {
+	let count = string.split(". ");
+	let sen = [];
+	for(let i = 0; i < count.length; i++) {
+		let sentence = count[i].split(" ")
+		let c = 0;
+		for(let y = 0; y < sentence.length; y++) {
+			if(c < sentence.length) {
+				c++;
+				if(c == sentence.length) {
+					sen.push(c)
+				}
+			}
+		}
+	}
+	alert(sen.reverse())
+}
+
 function countWord(string) {
 	let inforString = ``;
 	let arr = [];
@@ -158,6 +178,9 @@ document.getElementById("letter_count").addEventListener("click", function() {
 })
 document.getElementById("word_count").addEventListener("click", function() {
 	countWord(document.getElementById("T1").value);
+})
+document.getElementById("word_count").addEventListener("click", function() {
+	findLongest(document.getElementById("T1").value);
 })
 
 // Add Event Listeners
